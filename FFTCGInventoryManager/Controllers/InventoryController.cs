@@ -12,9 +12,11 @@ namespace FFTCGInventoryManager.Controllers
     [Route("api/Inventory")]
     public class InventoryController : Controller
     {
-        public void Post([FromBody] string cardId)
+
+        public void Post([FromBody] AddCardRequest request)
         {
-            Card card = new Card(cardId);
+            InventoryManager.AddCard(request.InventoryId, request.CardId);
+            Console.WriteLine(InventoryManager.Inventories.Count());
         }
 
 

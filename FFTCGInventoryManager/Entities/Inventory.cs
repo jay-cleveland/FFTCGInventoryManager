@@ -8,6 +8,7 @@ namespace FFTCGInventoryManager.Entities
     public class Inventory
     {
         public List<Card> CardList { get; set; }
+        public string Id { get; set; }
 
         public void AddCard(Card card)
         {
