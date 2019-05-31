@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FFTCGInventoryManager.Controllers
-{
+{//test
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
