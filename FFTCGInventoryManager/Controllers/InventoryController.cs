@@ -15,8 +15,8 @@ namespace FFTCGInventoryManager.Controllers
 
         public void Post([FromBody] AddCardRequest request)
         {
-            InventoryManager.AddCard(request.InventoryId, request.CardId);
-            Console.WriteLine(InventoryManager.Inventories.Count());
+            InventoryRepository.AddCard(request.InventoryId, request.CardId);
+            Console.WriteLine(InventoryRepository.Inventories.Count());
         }
 
 
