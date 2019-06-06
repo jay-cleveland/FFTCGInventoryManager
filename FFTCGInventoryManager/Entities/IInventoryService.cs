@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace FFTCGInventoryManager.Entities
 {
-    public class Inventory
+    public interface IInventoryService
     {
-        public List<Card> CardList { get; set; }
-        public string Id { get; set; }
+        void AddCard(string InventoryId, string CardId);
+        void RemoveCard(string InventoryId, string CardId);
 
     }
 }

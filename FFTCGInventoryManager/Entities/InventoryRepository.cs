@@ -18,11 +18,13 @@ namespace FFTCGInventoryManager.Entities
         public static void AddCard(string inventoryId, string cardId)
         {
             Inventories[inventoryId].Add(cardId);
+            Console.WriteLine("Added. Cards in inventory: " + Inventories[inventoryId].Count());
         }
 
         public static void RemoveCard(string inventoryId, string cardId)
         {
             Inventories[inventoryId].Remove(cardId);
+            Console.WriteLine("Removed. Cards in inventory: " + Inventories[inventoryId].Count());
         }
     }
 }

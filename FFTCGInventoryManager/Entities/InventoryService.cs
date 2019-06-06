@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace FFTCGInventoryManager.Entities
 {
-    public static class InventoryService
+    public class InventoryService : IInventoryService
     {
-        public static void AddCard(string inventoryId, string cardId)
+        public void AddCard(string inventoryId, string cardId)
         {
             if (!InventoryRepository.Inventories.ContainsKey(inventoryId))
                 throw new ArgumentException("Inventory ID does not exist.");
@@ -15,7 +15,7 @@ namespace FFTCGInventoryManager.Entities
             InventoryRepository.AddCard(inventoryId, cardId);
         }
 
-        public static void RemoveCard(string inventoryId, string cardId)
+        public void RemoveCard(string inventoryId, string cardId)
         {
             if (!InventoryRepository.Inventories.ContainsKey(inventoryId))
                 throw new ArgumentException("Inventory ID does not exist.");
