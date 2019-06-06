@@ -8,6 +8,12 @@ namespace FFTCGInventoryManager.Entities
     public static class InventoryRepository
     {
         public static Dictionary<string, List<string>> Inventories = new Dictionary<string, List<string>>();
+
+        public static void CreateNewInventory(string inventoryId)
+        {
+            List<string> cardList = new List<string>();
+            Inventories.Add(inventoryId, cardList);
+        }
         
         public static void AddCard(string inventoryId, string cardId)
         {

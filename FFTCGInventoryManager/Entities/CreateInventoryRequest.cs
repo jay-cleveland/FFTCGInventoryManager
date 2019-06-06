@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace FFTCGInventoryManager.Entities
 {
-    public class CardService
+    public class CreateInventoryRequest
     {
-
+        public string InventoryId { get; set; }
     }
 }

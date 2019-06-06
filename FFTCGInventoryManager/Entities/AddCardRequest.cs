@@ -9,11 +9,5 @@ namespace FFTCGInventoryManager.Entities
     {
         public string InventoryId { get; set; }
         public string CardId { get; set; }
-
-        public AddCardRequest(string inventoryId, string cardId)
-        {
-            InventoryId = inventoryId;
-            CardId = cardId;
-        }
     }
 }
