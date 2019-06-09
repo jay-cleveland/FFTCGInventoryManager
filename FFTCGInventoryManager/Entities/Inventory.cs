@@ -10,5 +10,10 @@ namespace FFTCGInventoryManager.Entities
         public List<Card> CardList { get; set; }
         public string Id { get; set; }
 
+        public Inventory(string id, List<Card> cardList)
+        {
+            Id = id;
+            CardList = cardList;
+        }
     }
 }

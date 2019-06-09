@@ -7,20 +7,28 @@ namespace FFTCGInventoryManager.Entities
 {
     public class InventoryService : IInventoryService
     {
+        public IInventoryRepository Repository { get; }
+
+        public InventoryService(IInventoryRepository repository)
+        {
+            Repository = repository;
+        }
+
         public void AddCard(string inventoryId, string cardId)
         {
-            if (!InventoryRepository.Inventories.ContainsKey(inventoryId))
-                throw new ArgumentException("Inventory ID does not exist.");
-
-            InventoryRepository.AddCard(inventoryId, cardId);
+            CheckInventoryExists(inventoryId);
+            Repository.AddCard(inventoryId, cardId);
         }
 
         public void RemoveCard(string inventoryId, string cardId)
         {
-            if (!InventoryRepository.Inventories.ContainsKey(inventoryId))
-                throw new ArgumentException("Inventory ID does not exist.");
+            CheckInventoryExists(inventoryId);
+            Repository.RemoveCard(inventoryId, cardId);
+        }
 
-            InventoryRepository.RemoveCard(inventoryId, cardId);
+        private void CheckInventoryExists(string inventoryId)
+        {
+            if (Repository.GetInventory(inventoryId) == null) throw new Exception();
         }
     }
 }
