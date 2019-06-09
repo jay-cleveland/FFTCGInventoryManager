@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace FFTCGInventoryManager.Repositories
 {
-    public class CardRepository
+    public interface ICardRepository
     {
-        public static List<Card> CardList = new List<Card>();
-
+        List<Card> GetCards();
     }
 }

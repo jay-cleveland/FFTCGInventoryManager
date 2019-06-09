@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using FFTCGInventoryManager.Entities;
 using FFTCGInventoryManager.Repositories;
 using FFTCGInventoryManager.Services;
+using FFTCGInventoryManager.DBConnectors;
 
 namespace FFTCGInventoryManager
 {
@@ -23,6 +24,8 @@ namespace FFTCGInventoryManager
             services.AddMvc();
             services.AddSingleton<IInventoryRepository, DictInventoryRepository>();
             services.AddScoped<IInventoryService, InventoryService>();
+            services.AddSingleton<IDbConnectionProvider, MySQLConnectionProvider>();
+            services.AddSingleton<ICardRepository, MySQLCardRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
