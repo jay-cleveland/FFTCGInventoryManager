@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using FFTCGInventoryManager.Entities;
+using FFTCGInventoryManager.Repositories;
+using FFTCGInventoryManager.Services;
 
 namespace FFTCGInventoryManager
 {
@@ -19,7 +21,7 @@ namespace FFTCGInventoryManager
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddScoped<IInventoryRepository, DictInventoryRepository>();
+            services.AddSingleton<IInventoryRepository, DictInventoryRepository>();
             services.AddScoped<IInventoryService, InventoryService>();
         }
 

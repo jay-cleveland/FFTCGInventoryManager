@@ -13,6 +13,7 @@ namespace FFTCGInventoryManager.Repositories
         public void CreateNewInventory()
         {
             List<string> cardList = new List<string>();
+            Console.WriteLine("New Inventory ID: " + Inventories.Count());
             Inventories.Add(Inventories.Count().ToString(), cardList);
             Console.WriteLine("Created new inventory. Count: " + Inventories.Count());
         }
