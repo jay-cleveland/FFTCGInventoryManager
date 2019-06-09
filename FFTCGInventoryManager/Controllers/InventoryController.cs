@@ -12,26 +12,29 @@ namespace FFTCGInventoryManager.Controllers
     [Route("api/inventory")]
     public class InventoryController : Controller
     {
+        public IInventoryService Service { get; set; }
+
+        public InventoryController(IInventoryService inventoryService)
+        {
+            Service = inventoryService;
+        }
+
         [HttpPost("card/add")]
         public void Post([FromBody] AddCardRequest request)
         {
-            InventoryService service = new InventoryService();
-            service.AddCard(request.InventoryId, request.CardId);
+            Service.AddCard(request.InventoryId, request.CardId);
         }
 
         [HttpPost("card/remove")]
         public void Post([FromBody] RemoveCardRequest request)
         {
-            InventoryService service = new InventoryService();
-            service.RemoveCard(request.InventoryId, request.CardId);
+            Service.RemoveCard(request.InventoryId, request.CardId);
         }
 
-        [HttpPost]
-        public void Post([FromBody] CreateInventoryRequest request)
+        [HttpPost("create")]
+        public void Post()
         {
-            InventoryRepository.CreateNewInventory(request.InventoryId);
-            Console.WriteLine(InventoryRepository.Inventories.Count());
-
+            Service.CreateNewInventory();
         }
 
 

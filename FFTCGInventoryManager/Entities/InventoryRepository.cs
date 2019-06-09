@@ -9,10 +9,11 @@ namespace FFTCGInventoryManager.Entities
     {
         public Dictionary<string, List<string>> Inventories = new Dictionary<string, List<string>>();
 
-        public void CreateNewInventory(string inventoryId)
+        public void CreateNewInventory()
         {
             List<string> cardList = new List<string>();
-            Inventories.Add(inventoryId, cardList);
+            Inventories.Add(Inventories.Count().ToString(), cardList);
+            Console.WriteLine("Created new inventory. Count: " + Inventories.Count());
         }
         
         public void AddCard(string inventoryId, string cardId)

@@ -9,6 +9,6 @@ namespace FFTCGInventoryManager.Entities
     {
         void AddCard(string InventoryId, string CardId);
         void RemoveCard(string InventoryId, string CardId);
-
+        void CreateNewInventory();
     }
 }

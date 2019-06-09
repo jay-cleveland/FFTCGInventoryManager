@@ -7,7 +7,7 @@ namespace FFTCGInventoryManager.Entities
 {
     public interface IInventoryRepository
     {
-        void CreateNewInventory(string InventoryId);
+        void CreateNewInventory();
         void AddCard(string inventoryId, string cardId);
         void RemoveCard(string inventoryId, string cardId);
         Inventory GetInventory(string InventoryId);

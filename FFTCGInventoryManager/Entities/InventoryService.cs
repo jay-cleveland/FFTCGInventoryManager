@@ -26,6 +26,11 @@ namespace FFTCGInventoryManager.Entities
             Repository.RemoveCard(inventoryId, cardId);
         }
 
+        public void CreateNewInventory()
+        {
+            Repository.CreateNewInventory();
+        }
+
         private void CheckInventoryExists(string inventoryId)
         {
             if (Repository.GetInventory(inventoryId) == null) throw new Exception();
