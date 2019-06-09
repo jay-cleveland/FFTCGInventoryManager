@@ -1,9 +1,10 @@
-﻿using System;
+﻿using FFTCGInventoryManager.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FFTCGInventoryManager.Entities
+namespace FFTCGInventoryManager.Repositories
 {
     public class DictInventoryRepository : IInventoryRepository
     {
