@@ -19,7 +19,7 @@ namespace FFTCGInventoryManager
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddSingleton(typeof(IInventoryRepository), typeof(InventoryRepository));
+            services.AddScoped<IInventoryRepository, DictInventoryRepository>();
             services.AddScoped<IInventoryService, InventoryService>();
         }
 

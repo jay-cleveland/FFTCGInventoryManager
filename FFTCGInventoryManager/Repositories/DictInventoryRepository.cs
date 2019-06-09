@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace FFTCGInventoryManager.Entities
 {
-    public class InventoryRepository : IInventoryRepository
+    public class DictInventoryRepository : IInventoryRepository
     {
         public Dictionary<string, List<string>> Inventories = new Dictionary<string, List<string>>();
 

@@ -7,7 +7,7 @@ namespace FFTCGInventoryManager.Entities
 {
     public class CardRepository
     {
-        public static List<string> CardIdList = new List<string>();
+        public static List<Card> CardList = new List<Card>();
 
     }
 }
