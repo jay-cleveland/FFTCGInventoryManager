@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FFTCGInventoryManager.Entities;
-using FFTCGInventoryManager.Repositories;
+using FFTCGInventoryManager.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,21 +14,23 @@ namespace FFTCGInventoryManager.Controllers
     public class CardController : Controller
     {
 
-        public ICardRepository Repository { get; set; }
+        public ICardService Service { get; set; }
 
-        public CardController(ICardRepository cardRepository)
+        public CardController(ICardService cardService)
         {
-            Repository = cardRepository;
+            Service = cardService;
         }
 
-        [HttpGet("get_cards")]
-        public void Get()
+        [HttpGet("all")]
+        public async Task<IActionResult> Get()
         {
-            List<Card> cardList = Repository.GetCards();
+            List<Card> cardList = Service.GetCards();
             foreach (var card in cardList)
             {
                 Console.WriteLine("Card id is: {0}", card.Id);
             }
+
+            return Ok(cardList);
         }
     }
 }

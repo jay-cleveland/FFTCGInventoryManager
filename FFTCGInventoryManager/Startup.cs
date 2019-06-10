@@ -16,16 +16,26 @@ namespace FFTCGInventoryManager
             Configuration = configuration;
         }
 
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public IConfiguration Configuration { get; }
-
+        
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+                {
+                    options.AddPolicy(MyAllowSpecificOrigins, builder =>
+                    {
+                        builder.WithOrigins("http://localhost:3000");
+                    });
+                });
+
             services.AddMvc();
             services.AddSingleton<IInventoryRepository, DictInventoryRepository>();
             services.AddScoped<IInventoryService, InventoryService>();
             services.AddSingleton<IDbConnectionProvider, MySQLConnectionProvider>();
             services.AddSingleton<ICardRepository, MySQLCardRepository>();
+            services.AddSingleton<ICardService, CardService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +46,7 @@ namespace FFTCGInventoryManager
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(MyAllowSpecificOrigins);
             app.UseMvc();
         }
     }
