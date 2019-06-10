@@ -33,9 +33,10 @@ namespace FFTCGInventoryManager.Repositories
         public Inventory GetInventory(string InventoryId)
         {
             if (Inventories.ContainsKey(InventoryId))
-                return new Inventory(InventoryId, Inventories[InventoryId]
+                return null;
+                /*return new Inventory(InventoryId, Inventories[InventoryId]
                     .Select(id => new Card(id))
-                    .ToList());
+                    .ToList());*/
 
             return null;
         }

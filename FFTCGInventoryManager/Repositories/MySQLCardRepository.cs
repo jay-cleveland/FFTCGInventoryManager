@@ -29,7 +29,10 @@ namespace FFTCGInventoryManager.Repositories
 
             while(dataReader.Read())
             {
-                cardList.Add(new Card(dataReader["card_id"] + ""));
+                cardList.Add(new Card(dataReader["card_id"] + "", 
+                    dataReader["name"] + "",
+                    dataReader["rarity"] + "",
+                    dataReader["image"] + ""));
             }
 
             dataReader.Close();
