@@ -11,7 +11,7 @@ namespace FFTCGInventoryManager.DBConnectors
     {
         public DbConnection GetConnection()
         {
-            var connectionString = "Server=localhost; Port=3306; Database=fftcg_database; Uid=admin; Pwd=Kittyk8%$!;";
+            var connectionString = "Server=localhost; Port=3306; Database=fftcg_inventory_manager; Uid=clevelanjk18; Pwd=jc8465;";
             return new MySqlConnection(connectionString);
         }
     }
