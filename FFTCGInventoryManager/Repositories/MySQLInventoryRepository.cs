@@ -23,7 +23,8 @@ namespace FFTCGInventoryManager.Repositories
 
         public void CreateNewInventory()
         {
-            throw new NotImplementedException();
+            List<Card> cardList = new List<Card>();
+            
         }
 
         public Inventory GetInventory(string InventoryId)

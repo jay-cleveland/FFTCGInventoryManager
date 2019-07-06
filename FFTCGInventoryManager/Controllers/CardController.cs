@@ -25,10 +25,6 @@ namespace FFTCGInventoryManager.Controllers
         public async Task<IActionResult> Get()
         {
             List<Card> cardList = Service.GetCards();
-            foreach (var card in cardList)
-            {
-                Console.WriteLine("Card id is: {0}", card.Id);
-            }
 
             return Ok(cardList);
         }

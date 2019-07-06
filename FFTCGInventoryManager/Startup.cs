@@ -31,7 +31,7 @@ namespace FFTCGInventoryManager
                 });
 
             services.AddMvc();
-            services.AddSingleton<IInventoryRepository, DictInventoryRepository>();
+            services.AddSingleton<IInventoryRepository, MySQLInventoryRepository>();
             services.AddScoped<IInventoryService, InventoryService>();
             services.AddSingleton<IDbConnectionProvider, MySQLConnectionProvider>();
             services.AddSingleton<ICardRepository, MySQLCardRepository>();

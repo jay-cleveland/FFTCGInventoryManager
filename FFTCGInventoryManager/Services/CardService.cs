@@ -20,5 +20,10 @@ namespace FFTCGInventoryManager.Services
         {
             return Repository.GetCards();
         }
+
+        public Card GetCard(string cardId)
+        {
+            return Repository.GetCard(cardId);
+        }
     }
 }

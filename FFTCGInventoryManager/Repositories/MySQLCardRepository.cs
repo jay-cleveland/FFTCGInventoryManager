@@ -20,7 +20,7 @@ namespace FFTCGInventoryManager.Repositories
         public List<Card> GetCards()
         {
             List<Card> cardList = new List<Card>();
-            var query = "SELECT * FROM cards";
+            var query = "SELECT * FROM card";
             var connection = _connectionProvider.GetConnection();
             connection.Open();
 
@@ -38,6 +38,20 @@ namespace FFTCGInventoryManager.Repositories
             dataReader.Close();
             connection.Close();
             return cardList;
+        }
+
+        public Card GetCard(string cardId)
+        {
+            var query = $"SELECT * FROM card WHERE id = {cardId}";
+            var connection = _connectionProvider.GetConnection();
+            connection.Open();
+
+            MySqlCommand command = new MySqlCommand(query, (MySqlConnection)connection);
+            MySqlDataReader dataReader = command.ExecuteReader();
+            dataReader.Read();
+
+            return new Card(dataReader["card_id"] + "", dataReader["name"] + "", dataReader["rarity"] + "", dataReader["image"] + "");
+            
         }
     }
 }
