@@ -36,6 +36,7 @@ namespace FFTCGInventoryManager
             services.AddSingleton<IDbConnectionProvider, MySQLConnectionProvider>();
             services.AddSingleton<ICardRepository, MySQLCardRepository>();
             services.AddSingleton<ICardService, CardService>();
+            services.AddSingleton<IUserRepository, MySQLUserRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
