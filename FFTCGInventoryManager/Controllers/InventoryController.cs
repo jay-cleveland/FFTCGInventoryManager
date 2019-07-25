@@ -23,7 +23,8 @@ namespace FFTCGInventoryManager.Controllers
         [HttpPost("card/add")]
         public void Post([FromBody] AddCardRequest request)
         {
-            Service.AddCard(request.InventoryId, request.CardId);
+            Console.WriteLine("Request - User: " + request.InventoryId + " Card: " + request.CardId);
+            //Service.AddCard(request.InventoryId, request.CardId);
         }
 
         [HttpPost("card/remove")]
