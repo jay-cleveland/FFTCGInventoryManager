@@ -13,6 +13,7 @@ namespace FFTCGInventoryManager.Repositories
         public void CreateNewInventory()
         {
             List<string> cardList = new List<string>();
+            Console.WriteLine("New Inventory ID: " + Inventories.Count());
             Inventories.Add(Inventories.Count().ToString(), cardList);
             Console.WriteLine("Created new inventory. Count: " + Inventories.Count());
         }
@@ -32,9 +33,10 @@ namespace FFTCGInventoryManager.Repositories
         public Inventory GetInventory(string InventoryId)
         {
             if (Inventories.ContainsKey(InventoryId))
-                return new Inventory(InventoryId, Inventories[InventoryId]
+                return null;
+                /*return new Inventory(InventoryId, Inventories[InventoryId]
                     .Select(id => new Card(id))
-                    .ToList());
+                    .ToList());*/
 
             return null;
         }

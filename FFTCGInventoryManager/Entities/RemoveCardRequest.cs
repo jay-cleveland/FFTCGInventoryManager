@@ -1,4 +1,4 @@
-﻿namespace FFTCGInventoryManager.Controllers
+﻿namespace FFTCGInventoryManager.Entities
 {
     public class RemoveCardRequest
     {
