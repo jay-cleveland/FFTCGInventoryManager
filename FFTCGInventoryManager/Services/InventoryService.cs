@@ -41,6 +41,7 @@ namespace FFTCGInventoryManager.Services
         public void DeleteInventory(string inventoryId)
         {
             CheckInventoryExists(inventoryId);
+            Repository.DeleteInventory(inventoryId);
 
         }
     }
