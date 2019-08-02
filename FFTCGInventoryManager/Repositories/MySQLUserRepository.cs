@@ -30,6 +30,9 @@ namespace FFTCGInventoryManager.Repositories
 
         public void GetUser(int user_id)
         {
+            /*TODO 
+             * Get one value, the uuid from the tabl
+             */
             var query = $"SELECT * FROM users WHERE user_id = {user_id}";
             var connection = _connectionProvider.GetConnection();
             connection.Open();
