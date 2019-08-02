@@ -1,4 +1,5 @@
-﻿using FFTCGInventoryManager.Repositories;
+﻿using FFTCGInventoryManager.Entities;
+using FFTCGInventoryManager.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,12 @@ namespace FFTCGInventoryManager.Services
         private void CheckInventoryExists(string inventoryId)
         {
             if (Repository.GetInventory(inventoryId) == null) throw new Exception();
+        }
+
+        public void DeleteInventory(string inventoryId)
+        {
+            CheckInventoryExists(inventoryId);
+
         }
     }
 }
