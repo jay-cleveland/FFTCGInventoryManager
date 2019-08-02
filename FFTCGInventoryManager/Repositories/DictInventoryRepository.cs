@@ -41,6 +41,9 @@ namespace FFTCGInventoryManager.Repositories
             return null;
         }
 
-
+        public void DeleteInventory(string InventoryId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FFTCGInventoryManager.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,5 +11,6 @@ namespace FFTCGInventoryManager.Services
         void AddCard(string InventoryId, string CardId);
         void RemoveCard(string InventoryId, string CardId);
         void CreateNewInventory();
+        void DeleteInventory(string InventoryId);
     }
 }

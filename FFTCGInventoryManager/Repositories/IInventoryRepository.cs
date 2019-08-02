@@ -12,5 +12,6 @@ namespace FFTCGInventoryManager.Repositories
         void AddCard(string inventoryId, string cardId);
         void RemoveCard(string inventoryId, string cardId);
         Inventory GetInventory(string InventoryId);
+        void DeleteInventory(string InventoryId);
     }
 }
