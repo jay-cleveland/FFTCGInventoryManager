@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using FFTCGInventoryManager.DBConnectors;
 using FFTCGInventoryManager.Entities;
 
-namespace FFTCGInventoryManager.Repositories
+namespace FFTCGInventoryManager.Repositories.InventoryRepository
 {
     public class MySQLInventoryRepository : IInventoryRepository
     {
@@ -24,7 +24,7 @@ namespace FFTCGInventoryManager.Repositories
         public void CreateNewInventory()
         {
             List<Card> cardList = new List<Card>();
-            
+
         }
 
         public void DeleteInventory(string InventoryId)

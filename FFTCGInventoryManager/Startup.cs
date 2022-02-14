@@ -2,10 +2,14 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using FFTCGInventoryManager.Entities;
 using FFTCGInventoryManager.Repositories;
 using FFTCGInventoryManager.Services;
 using FFTCGInventoryManager.DBConnectors;
+using FFTCGInventoryManager.Repositories.InventoryRepository;
+using FFTCGInventoryManager.Repositories.CardRepository;
+using FFTCGInventoryManager.Repositories.UserRepository;
 
 namespace FFTCGInventoryManager
 {
@@ -40,7 +44,7 @@ namespace FFTCGInventoryManager
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -48,7 +52,13 @@ namespace FFTCGInventoryManager
             }
 
             app.UseCors(MyAllowSpecificOrigins);
-            app.UseMvc();
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }

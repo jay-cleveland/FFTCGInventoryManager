@@ -9,9 +9,12 @@ namespace FFTCGInventoryManager.DBConnectors
 {
     public class MySQLConnectionProvider : IDbConnectionProvider
     {
+        private readonly string _username = Environment.GetEnvironmentVariable("DB_ACCESS_USERNAME");
+        private readonly string _secret = Environment.GetEnvironmentVariable("DB_ACCESS_SECRET");
+
         public DbConnection GetConnection()
         {
-            var connectionString = "Server=localhost; Port=3306; Database=fftcg_inventory; Uid=clevelanjk18; Pwd=jc8465;";
+            var connectionString = $"Server=localhost; Port=3306; Database=fftcg_inventory; Uid={_username}; Pwd={_secret};";
             return new MySqlConnection(connectionString);
         }
     }
