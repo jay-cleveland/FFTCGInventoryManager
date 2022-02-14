@@ -1,10 +1,5 @@
-﻿using FFTCGInventoryManager.Entities;
-using FFTCGInventoryManager.Repositories;
-using FFTCGInventoryManager.Repositories.InventoryRepository;
+﻿using FFTCGInventoryManager.Repositories.InventoryRepository;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace FFTCGInventoryManager.Services
 {
