@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FFTCGInventoryManager.Entities;
 using FFTCGInventoryManager.Repositories;
+using FFTCGInventoryManager.Repositories.CardRepository;
 
 namespace FFTCGInventoryManager.Services
 {

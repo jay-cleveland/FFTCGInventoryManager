@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FFTCGInventoryManager.Repositories
+namespace FFTCGInventoryManager.Repositories.InventoryRepository
 {
     public class DictInventoryRepository : IInventoryRepository
     {
@@ -17,7 +17,7 @@ namespace FFTCGInventoryManager.Repositories
             Inventories.Add(Inventories.Count().ToString(), cardList);
             Console.WriteLine("Created new inventory. Count: " + Inventories.Count());
         }
-        
+
         public void AddCard(string inventoryId, string cardId)
         {
             Inventories[inventoryId].Add(cardId);
@@ -34,9 +34,9 @@ namespace FFTCGInventoryManager.Repositories
         {
             if (Inventories.ContainsKey(InventoryId))
                 return null;
-                /*return new Inventory(InventoryId, Inventories[InventoryId]
-                    .Select(id => new Card(id))
-                    .ToList());*/
+            /*return new Inventory(InventoryId, Inventories[InventoryId]
+                .Select(id => new Card(id))
+                .ToList());*/
 
             return null;
         }

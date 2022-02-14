@@ -1,5 +1,6 @@
 ﻿using FFTCGInventoryManager.Entities;
 using FFTCGInventoryManager.Repositories;
+using FFTCGInventoryManager.Repositories.InventoryRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -21,7 +21,9 @@
       "launchBrowser": true,
       "launchUrl": "api/values",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DB_ACCESS_USERNAME": "fftcg-service",
+        "DB_ACCESS_SECRET": "5Fh9722eZv&z"
       },
       "applicationUrl": "http://localhost:53931/"
     }

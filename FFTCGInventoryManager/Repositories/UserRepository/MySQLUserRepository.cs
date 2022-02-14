@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FFTCGInventoryManager.Repositories
+namespace FFTCGInventoryManager.Repositories.UserRepository
 {
     public class MySQLUserRepository : IUserRepository
     {
@@ -25,7 +25,7 @@ namespace FFTCGInventoryManager.Repositories
 
             MySqlCommand command = new MySqlCommand(query, (MySqlConnection)connection);
             command.ExecuteNonQuery();
-            
+
         }
 
         public void GetUser(int user_id)

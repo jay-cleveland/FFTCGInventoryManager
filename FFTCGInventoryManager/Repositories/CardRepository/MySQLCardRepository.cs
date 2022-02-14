@@ -1,12 +1,9 @@
 ﻿using FFTCGInventoryManager.DBConnectors;
 using FFTCGInventoryManager.Entities;
 using MySql.Data.MySqlClient;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace FFTCGInventoryManager.Repositories
+namespace FFTCGInventoryManager.Repositories.CardRepository
 {
     public class MySQLCardRepository : ICardRepository
     {

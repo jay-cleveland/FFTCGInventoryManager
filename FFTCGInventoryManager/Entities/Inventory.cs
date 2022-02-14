@@ -1,19 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace FFTCGInventoryManager.Entities
-{
-    public class Inventory
-    {
-        public List<Card> CardList { get; set; }
-        public string Id { get; set; }
+namespace FFTCGInventoryManager.Entities;
 
-        public Inventory(string id, List<Card> cardList)
-        {
-            Id = id;
-            CardList = cardList;
-        }
-    }
-}
+public record Inventory(string Id, List<Card> CardList);
