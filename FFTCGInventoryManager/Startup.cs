@@ -3,13 +3,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using FFTCGInventoryManager.Entities;
-using FFTCGInventoryManager.Repositories;
 using FFTCGInventoryManager.Services;
 using FFTCGInventoryManager.DBConnectors;
 using FFTCGInventoryManager.Repositories.InventoryRepository;
 using FFTCGInventoryManager.Repositories.CardRepository;
 using FFTCGInventoryManager.Repositories.UserRepository;
+using System;
 
 namespace FFTCGInventoryManager
 {
@@ -19,7 +18,7 @@ namespace FFTCGInventoryManager
         {
             Configuration = configuration;
         }
-
+        private readonly string _frontEndURL = Environment.GetEnvironmentVariable("FRONT_END_URL");
         readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public IConfiguration Configuration { get; }
         
@@ -30,7 +29,7 @@ namespace FFTCGInventoryManager
                 {
                     options.AddPolicy(MyAllowSpecificOrigins, builder =>
                     {
-                        builder.WithOrigins("http://localhost:3000");
+                        builder.WithOrigins(_frontEndURL);
                     });
                 });
 

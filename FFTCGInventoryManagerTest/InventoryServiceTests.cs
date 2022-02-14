@@ -5,6 +5,7 @@ using Moq;
 using System;
 using Xunit;
 using System.Collections.Generic;
+using FFTCGInventoryManager.Repositories.InventoryRepository;
 
 namespace FFTCGInventoryManagerTest
 {

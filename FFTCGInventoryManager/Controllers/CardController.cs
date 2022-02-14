@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using FFTCGInventoryManager.Entities;
 using FFTCGInventoryManager.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FFTCGInventoryManager.Controllers
