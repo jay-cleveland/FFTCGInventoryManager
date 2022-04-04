@@ -21,11 +21,11 @@ namespace FFTCGInventoryManager.Controllers
         }
 
         [HttpGet("all")]
-        public async Task<IActionResult> Get()
+        public async Task<List<Card>> Get()
         {
-            List<Card> cardList = Service.GetCards();
+            List<Card> cardList = await Service.GetCards();
 
-            return Ok(cardList);
+            return cardList;
         }
     }
 }

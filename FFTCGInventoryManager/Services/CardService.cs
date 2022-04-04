@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using FFTCGInventoryManager.Entities;
 using FFTCGInventoryManager.Repositories.CardRepository;
 
@@ -13,14 +14,14 @@ namespace FFTCGInventoryManager.Services
             Repository = cardRepository;
         }
 
-        public List<Card> GetCards()
+        public async Task<List<Card>> GetCards()
         {
-            return Repository.GetCards();
+            return await Repository.GetCards();
         }
 
-        public Card GetCard(string cardId)
+        public async Task<Card> GetCard(string cardId)
         {
-            return Repository.GetCard(cardId);
+            return await Repository.GetCard(cardId);
         }
     }
 }
